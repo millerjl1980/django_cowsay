@@ -5,10 +5,16 @@
 
 {% block content %}
     <h1>Welcome to the Django Cowsay!</h1>
-    
-    
-    
-
+    {{cow}}
+    <br>
+    <form method="POST">
+    <table>
+        {{ form }}
+    </table>
+    {% csrf_token %}
+    <button type="submit">Submit</button>
+</form>
+<br>
     
      
 
