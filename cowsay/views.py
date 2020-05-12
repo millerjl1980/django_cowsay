@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from cowsay.models import Cow
 from cowsay.forms import TextForm
-from django.http import HttpResponse
-import sys
 import subprocess
 
 # Create your views here.

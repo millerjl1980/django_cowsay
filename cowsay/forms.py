@@ -1,4 +1,3 @@
-
 from django.forms import modelform_factory
 from cowsay.models import Cow
 
