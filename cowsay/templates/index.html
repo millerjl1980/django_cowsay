@@ -5,9 +5,8 @@
 
 {% block content %}
     <h1>Welcome to the Django Cowsay!</h1>
-    {% for c in output %}
-        {{ c|safe }}
-    {% endfor %}
+    <!-- Had assistance from Pete in finding info about pre tag -->
+    <pre>{{ output }}</pre>
     <br>
     <form method="POST">
     <table>
