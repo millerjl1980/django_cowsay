@@ -19,3 +19,12 @@ def index(request):
     else:
         form = TextForm()
     return render(request, 'index.html', {'form': TextForm})
+
+def old_cows(request):
+    # https://stackoverflow.com/questions/20555673/django-query-get-last-n-records
+    last_ten = Cow.objects.all().order_by('-id')[:10]
+    old_cows = []
+    for cow in last_ten:
+        output = subprocess.run(['cowsay', cow.text], capture_output=True, text=True)
+        old_cows.append(output.stdout)
+    return render(request, 'old_cows.html', {'old_cows': old_cows})

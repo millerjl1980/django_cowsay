@@ -5,9 +5,11 @@
 
 {% block content %}
     <h1>Welcome to the Django Cowsay!</h1>
-    <a href="{% url 'oldcows' %}">Line History</a>
-    <!-- Had assistance from Pete in finding info about pre tag -->
-    <pre>{{ output }}</pre>
+    <h2>Lastest submitted lines of text:</h2>
+    {% for cow in old_cows %}
+       <pre> {{cow}} </pre>
+    {% endfor %}
+    <!-- <pre>{{ output }}</pre>
     <br>
     <form method="POST">
     <table>
@@ -15,7 +17,8 @@
     </table>
     {% csrf_token %}
     <button type="submit">Submit</button>
-</form>
+</form> -->
+<a href="{% url 'home' %}">Back Home</a>
     
      
 
